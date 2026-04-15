@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+      <div class="brand-lockup">
+        <p class="brand-mark">Quiz Studio</p>
+        <p class="brand-subtitle">10-question rounds for quick practice</p>
+      </div>
+      <div class="topbar-chip">Mobile + Laptop Ready</div>
+    </header>
+
+    <main class="main-grid">
+      <section class="panel home-panel" id="homeScreen">
+        <div class="eyebrow">Basic to slightly intermediate</div>
+        <h1>Calm, focused quiz practice across your core subjects.</h1>
+        <p class="intro-copy">
+          Pick a subject, answer 10 questions, and keep going with a fresh set every time you finish.
+          The experience is simple, polished, and easy to use on both phone and desktop.
+        </p>
+
+        <div class="selection-summary">
+          <div>
+            <p class="summary-label">Selected Subject</p>
+            <h2 id="selectionTitle">Choose a subject</h2>
+          </div>
+          <p id="selectionDescription">
+            Each round brings 10 questions. When the pool gets low, the app refreshes it automatically.
+          </p>
+        </div>
+
+        <div class="category-grid" id="categoryGrid"></div>
+
+        <div class="home-actions">
+          <button class="button button-primary" id="startButton" disabled>Start 10 Questions</button>
+        </div>
+      </section>
+
+      <aside class="panel preview-panel" id="previewPanel">
+        <div class="preview-card">
+          <p class="summary-label">Experience</p>
+          <h2>Premium by design, easy by default.</h2>
+          <ul class="feature-list">
+            <li>4 subject areas with a mixed mode</li>
+            <li>Fresh 10-question rounds with score tracking</li>
+            <li>Responsive layout with touch-friendly controls</li>
+            <li>Instant feedback after every answer</li>
+          </ul>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat-card">
+            <p class="stat-label">Subjects</p>
+            <h3>4</h3>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Questions / Round</p>
+            <h3>10</h3>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Question Bank</p>
+            <h3>80+</h3>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Style</p>
+            <h3>Minimal</h3>
+          </article>
+        </div>
+      </aside>
+
+      <section class="panel quiz-panel hidden" id="quizScreen">
+        <div class="quiz-header">
+          <div>
+            <span class="subject-pill" id="activeCategoryPill">Subject</span>
+            <h2 id="quizHeading">Question time</h2>
+          </div>
+          <div class="round-badge">
+            <span class="summary-label">Round</span>
+            <strong id="roundCounter">01</strong>
+          </div>
+        </div>
+
+        <div class="progress-block">
+          <div class="progress-meta">
+            <span id="progressText">Question 1 of 10</span>
+            <span id="scoreText">0 correct</span>
+          </div>
+          <div class="progress-track">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+
+        <article class="question-card">
+          <p class="question-label" id="questionLabel">Warm-up</p>
+          <h3 id="questionText">Question text</h3>
+          <div class="option-list" id="optionsContainer"></div>
+
+          <div class="feedback-row">
+            <p id="feedbackText">Select one answer to continue.</p>
+            <button class="button button-secondary" id="nextButton" disabled>Next Question</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel result-panel hidden" id="resultScreen">
+        <div class="result-hero">
+          <span class="result-chip" id="resultBadge">Round Complete</span>
+          <h2 id="resultTitle">Nice work.</h2>
+          <p id="resultSummary">
+            Your round summary will appear here when you finish all 10 questions.
+          </p>
+        </div>
+
+        <div class="result-stats">
+          <article class="result-card">
+            <p class="stat-label">Correct Answers</p>
+            <h3 id="finalScore">0 / 10</h3>
+          </article>
+          <article class="result-card">
+            <p class="stat-label">Accuracy</p>
+            <h3 id="finalAccuracy">0%</h3>
+          </article>
+          <article class="result-card">
+            <p class="stat-label">Subject</p>
+            <h3 id="finalCategory">-</h3>
+          </article>
+        </div>
+
+        <div class="home-actions">
+          <button class="button button-primary" id="nextSetButton">Play Fresh Set</button>
+          <button class="button button-secondary" id="changeCategoryButton">Change Subject</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
